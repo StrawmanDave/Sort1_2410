@@ -1,33 +1,37 @@
 import random
 def main():
 
-    # C = (CreateRandomList(10))
-    # D = C.copy()
-    # D.sort()
-    # BubbleSort(C)
+    C = (CreateRandomList(10))
+    D = C.copy()
+    D.sort()
+    BubbleSort(C)
 
-    # if D != C:
-    #     print("Error in bubble sort")
-    # else:
-    #     print( f"Copy of  list sorted {D}" )
-    #     print(f"bubble sort {C}")
+    if D != C:
+        print("Error in bubble sort")
+    else:
+        print( f"Copy of Random list then sorted {D}" )
+        print(f"bubble sort {C}")
 
-    # E = (CreateRandomList(10))
-    # B = E.copy()
-    # B.sort()
-    # ShakerSort(E)
+    E = (CreateRandomList(10))
+    B = E.copy()
+    B.sort()
+    ShakerSort(E)
 
-    # if B != E:
-    #      print("Error in Shaker sort")
-    # else:
-    #      print(f"Copy 2 of random list {B}")
-    #      print(f"shaker sort list {E}")
+    if B != E:
+         print("Error in Shaker sort")
+    else:
+         print(f"Copy of Random list then sorted {B}")
+         print(f"Shaker sort list {E}")
 
     G = (CreateRandomList(10))
     H = G.copy()
     H.sort()
     CountingSort(G)
-    print(G)
+    if H != G:
+        print("Error in Counting sort")
+    else:
+        print(f"Copy of Random list then sorted {H}")
+        print(f"Counting sort {G}")
 
 def CreateRandomList(A):
 # create a list with A number of integers so 0-9 as the index.
@@ -59,19 +63,20 @@ def ShakerSort(A):
                   is_Sorted = False
 
 def CountingSort(A):
-    print (A)
+    # print (A) 
     f = [0] * len(A)
-    print(f)
+    # print(f)
 
     for x in A:
         f[x] = f[x] + 1 # finds the iteration of the given number and adds one to it.
-    print(f)
+    # print(f)
 
-    for i in range(len(f)): # foreach value at the iteration set the list of A to that value count times
-         v = i
-         count = f[i]
-         for j in range(count):
-            A[i] = v
-            j += 1
-
+    K = 0 # initialize k first to be zero so it does not throw errors
+    for i in range(len(f)): 
+         v = i # v is the value you are on
+         count = f[i] # count is how many there are of that value
+         for j in range(count): # this loop will only do anything if the count is bigger than 0
+            # print(j, end=" ")
+            A[K] = v #A[K] starts at zero goes up
+            K += 1 # # we use k to iterate up becuase if we use j it will be an error out of the range
 main()
