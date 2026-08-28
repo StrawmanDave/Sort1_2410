@@ -1,2 +1,2 @@
-# Sort1_2410
-The first sorting assingment for 2410
+# Sort1_2420
+The first sorting assingment for 2420
